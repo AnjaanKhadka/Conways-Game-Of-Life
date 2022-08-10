@@ -1,6 +1,7 @@
 import pygame
 import pickle
 import sys
+import random
 
 running = True
 width, height = 800, 800
@@ -52,7 +53,6 @@ def oldLife_eq_Life():
 
 def load_life():
     global Life
-    global old_Life
     global initial_load
     
     if initial_load:
@@ -66,8 +66,18 @@ def load_life():
     
     with open(str(filename) + '.data', 'rb') as filehandle:
         Life = pickle.load(filehandle)
-        oldLife_eq_Life()
+        
+def load_random_life():
+    global Life
+    for i in range(col):
+        for j in range(row):
+            Life[i][j] = random.randint(0,6) == 0
+    
 
+def reset_life():
+    global Life 
+    Life = [[0] * row for i in range(col)]
+    
 
 def draw_rect():
     for i in range(row):
@@ -139,6 +149,10 @@ while not end:
                     save_life()
                 if event.key == pygame.K_l:
                     load_life()
+                if event.key == pygame.K_c:
+                    reset_life()
+                if event.key == pygame.K_r:
+                    load_random_life()
             if event.type == pygame.MOUSEBUTTONDOWN:
                 mouse_x, mouse_y = pygame.mouse.get_pos()
                 change = True
