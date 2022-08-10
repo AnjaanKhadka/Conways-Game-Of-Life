@@ -19,3 +19,45 @@ Conway's Game of life follows basic rule that defines certain cell will live or 
 ## Installing
 
 All requirements of the file are given in [requirements.txt](https://github.com/AnjaanKhadka/Conways-Game-Of-Life/blob/master/requirements.txt) file. To install all requirements execute following code.
+
+    pip install -r requirements.txt
+
+## Inference
+
+### Greating your own world
+
+First Execue following code then by simply clicking using mouse pointer, set and reset status of individual cells.
+
+    python main.py
+
+Press enter key to start/stop simulation. Simulation stops automatically once you reach stable state.
+
+### Generating random world
+
+To generate random world click 'r' key to randomize status of each cell randomly.
+
+### Using existing world
+
+To use existing world execute following code.
+
+    python main.py <model_name>
+
+Various example models are given in models directory. Executing acorn model can be done as
+
+    python main.py models/acorn
+
+or
+
+    python main.py models/acorn.data
+
+Alternatively to load those model press 'l' key in keyboard. Then in terminal window it asks for model path. Enter the path and load the model.
+
+### Saving your own world
+
+To save your own world first set the cells as per your desire. Then press 's' key in keyboard to initiate save process. In terminal type in your model_name or model_path/modelname to save the file.
+
+## Models
+
+### R-Pentomino
+
+<!-- ![rpentomino](https://github.com/AnjaanKhadka/Conways-Game-Of-Life/blob/master/results/rpentomino.png) -->
